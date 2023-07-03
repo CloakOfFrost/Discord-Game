@@ -25,7 +25,7 @@ public class Player_Move_Script : MonoBehaviour
 		Time.deltaTime is the time since last frame (so framerate wont influence speed because speed is multiplied by Time.DeltaTime)
 		*/
 		horizontalInput = Input.GetAxis("Horizontal");
-		rigidBody.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime*20, rigidBody.velocity.y);
+		rigidBody.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime*60, rigidBody.velocity.y);
 		
 		turn_to_mouse(rotationSpeed);
         }
