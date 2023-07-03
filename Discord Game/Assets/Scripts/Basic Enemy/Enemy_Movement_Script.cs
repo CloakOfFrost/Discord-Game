@@ -16,10 +16,10 @@ public class Enemy_Movement_Script : MonoBehaviour
 	{
 		//Moves the enemy twards the player but cannot jump
         	if(player.transform.position.x > transform.position.x){
-        		transform.position+=new Vector3(Speed,0,0);
+        		transform.position+=new Vector3(Speed*Time.deltaTime*60,0,0);
         	}
         	if(player.transform.position.x < transform.position.x){
-        		transform.position-=new Vector3(Speed,0,0);
+        		transform.position-=new Vector3(Speed*Time.deltaTime*60,0,0);
         	}
     	}
 }

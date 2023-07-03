@@ -25,7 +25,7 @@ public class Player_Move_Script : MonoBehaviour
 		Time.deltaTime is the time since last frame (so framerate wont influence speed because speed is multiplied by Time.DeltaTime)
 		*/
 		horizontalInput = Input.GetAxis("Horizontal");
-		rigidBody.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime, rigidBody.velocity.y);
+		rigidBody.velocity = new Vector2(horizontalInput * movementSpeed * Time.deltaTime*20, rigidBody.velocity.y);
 		
 		turn_to_mouse(rotationSpeed);
         }
@@ -35,6 +35,7 @@ public class Player_Move_Script : MonoBehaviour
         	Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         	float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg - 90;
         	Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        	transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, speed * Time.deltaTime);
+        	transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, speed * Time.deltaTime*60
+			);
 	}
 }
