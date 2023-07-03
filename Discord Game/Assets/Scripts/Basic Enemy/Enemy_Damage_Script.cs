@@ -15,4 +15,15 @@ public class Enemy_Damage_Script : MonoBehaviour
     {
         
     }
+	//Kills player on collision with enemy and kills enemy on collision with the player's weapon
+	public void OnCollisionEnter2D(Collision2D other)
+        {
+                if(other.gameObject.name != "Player"){
+                        return;
+                } else if (other.collider.tag != "Player Weapon") {
+			Destroy(other.gameObject);
+		} else {
+			Destroy(this.gameObject);
+		}
+        }
 }
